@@ -5,28 +5,32 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { Toast } from '@ionic-native/toast';
+import { DecimalPipe } from '@angular/common';
+import { IonicStorageModule } from '@ionic/storage';
+import { ConvertLocalPage } from '../pages/convert-local/convert-local';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    ConvertLocalPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    ConvertLocalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Toast
+    Toast,
+    DecimalPipe
   ]
 })
 export class AppModule {}

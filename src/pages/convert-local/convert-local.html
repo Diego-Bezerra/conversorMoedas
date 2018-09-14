@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Converta sua moeda
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label stacked color="primary">Unidade da moeda local em Reais</ion-label>
+      <ion-input [(ngModel)]="unityValue" type="number" (keyup)="calculate()" placeholder="unidade da moeda local em Reais"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">Valor em real</ion-label>
+      <ion-input [(ngModel)]="valueReal" type="number" placeholder="0,00" (keyup)="calculate()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">Valor na moeda local</ion-label>
+      <ion-input [(ngModel)]="valueLocal" type="number" placeholder="0,00" (keyup)="calculate()"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-label block class="result">{{result1}}</ion-label>
+  <ion-label block class="result">{{result2}}</ion-label>
+</ion-content>
